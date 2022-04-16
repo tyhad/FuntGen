@@ -1,0 +1,6 @@
+git init > untuk "initial" projek baru.
+git add > untuk menambahkan setiap perubahan file (termasuk file baru).
+git commit -m "comment" > untuk git merekam setiap perubahan.
+git commit -am "comment" > git add + git commit.
+git push origin main > untuk upload ke repository (github).
+--help > dokumentasi.
