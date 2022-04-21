@@ -16,7 +16,7 @@
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <widget class="QLineEdit" name="lineEdit">
+     <widget class="QLineEdit" name="le_formula_box">
       <property name="minimumSize">
        <size>
         <width>0</width>
@@ -27,6 +27,9 @@
        <font>
         <pointsize>18</pointsize>
        </font>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
       </property>
      </widget>
     </item>
@@ -40,7 +43,7 @@
       </property>
       <layout class="QGridLayout" name="gridLayout">
        <item row="2" column="3">
-        <widget class="QPushButton" name="pushButton_12">
+        <widget class="QPushButton" name="btn_multiplication">
          <property name="minimumSize">
           <size>
            <width>0</width>
@@ -58,7 +61,7 @@
         </widget>
        </item>
        <item row="1" column="1">
-        <widget class="QPushButton" name="pushButton_6">
+        <widget class="QPushButton" name="btn_close_bracket">
          <property name="minimumSize">
           <size>
            <width>0</width>
@@ -76,7 +79,7 @@
         </widget>
        </item>
        <item row="1" column="0">
-        <widget class="QPushButton" name="pushButton_5">
+        <widget class="QPushButton" name="btn_open_bracket">
          <property name="minimumSize">
           <size>
            <width>0</width>
@@ -94,7 +97,7 @@
         </widget>
        </item>
        <item row="0" column="0">
-        <widget class="QPushButton" name="pushButton">
+        <widget class="QPushButton" name="btn_cos">
          <property name="minimumSize">
           <size>
            <width>0</width>
@@ -112,7 +115,7 @@
         </widget>
        </item>
        <item row="1" column="2">
-        <widget class="QPushButton" name="pushButton_7">
+        <widget class="QPushButton" name="btn_pi">
          <property name="minimumSize">
           <size>
            <width>0</width>
@@ -130,7 +133,7 @@
         </widget>
        </item>
        <item row="2" column="0">
-        <widget class="QPushButton" name="pushButton_9">
+        <widget class="QPushButton" name="btn_num_7">
          <property name="minimumSize">
           <size>
            <width>0</width>
@@ -148,7 +151,7 @@
         </widget>
        </item>
        <item row="3" column="1">
-        <widget class="QPushButton" name="pushButton_14">
+        <widget class="QPushButton" name="btn_num_5">
          <property name="minimumSize">
           <size>
            <width>0</width>
@@ -166,7 +169,7 @@
         </widget>
        </item>
        <item row="2" column="1">
-        <widget class="QPushButton" name="pushButton_10">
+        <widget class="QPushButton" name="btn_num_8">
          <property name="minimumSize">
           <size>
            <width>0</width>
@@ -184,7 +187,7 @@
         </widget>
        </item>
        <item row="1" column="3">
-        <widget class="QPushButton" name="pushButton_8">
+        <widget class="QPushButton" name="btn_divide">
          <property name="minimumSize">
           <size>
            <width>0</width>
@@ -202,7 +205,7 @@
         </widget>
        </item>
        <item row="0" column="1">
-        <widget class="QPushButton" name="pushButton_2">
+        <widget class="QPushButton" name="btn_sin">
          <property name="minimumSize">
           <size>
            <width>0</width>
@@ -220,7 +223,7 @@
         </widget>
        </item>
        <item row="3" column="0">
-        <widget class="QPushButton" name="pushButton_13">
+        <widget class="QPushButton" name="btn_num_4">
          <property name="minimumSize">
           <size>
            <width>0</width>
@@ -238,7 +241,7 @@
         </widget>
        </item>
        <item row="3" column="3">
-        <widget class="QPushButton" name="pushButton_16">
+        <widget class="QPushButton" name="btn_substraction">
          <property name="minimumSize">
           <size>
            <width>0</width>
@@ -256,7 +259,7 @@
         </widget>
        </item>
        <item row="2" column="2">
-        <widget class="QPushButton" name="pushButton_11">
+        <widget class="QPushButton" name="btn_num_9">
          <property name="minimumSize">
           <size>
            <width>0</width>
@@ -274,7 +277,7 @@
         </widget>
        </item>
        <item row="0" column="3">
-        <widget class="QPushButton" name="pushButton_4">
+        <widget class="QPushButton" name="btn_clear">
          <property name="minimumSize">
           <size>
            <width>0</width>
@@ -292,7 +295,7 @@
         </widget>
        </item>
        <item row="0" column="2">
-        <widget class="QPushButton" name="pushButton_3">
+        <widget class="QPushButton" name="btn_tan">
          <property name="minimumSize">
           <size>
            <width>0</width>
@@ -310,7 +313,7 @@
         </widget>
        </item>
        <item row="3" column="2">
-        <widget class="QPushButton" name="pushButton_15">
+        <widget class="QPushButton" name="btn_num_6">
          <property name="minimumSize">
           <size>
            <width>0</width>
@@ -328,7 +331,7 @@
         </widget>
        </item>
        <item row="4" column="0">
-        <widget class="QPushButton" name="pushButton_17">
+        <widget class="QPushButton" name="btn_num_1">
          <property name="minimumSize">
           <size>
            <width>0</width>
@@ -346,7 +349,7 @@
         </widget>
        </item>
        <item row="4" column="1">
-        <widget class="QPushButton" name="pushButton_18">
+        <widget class="QPushButton" name="btn_num_2">
          <property name="minimumSize">
           <size>
            <width>0</width>
@@ -364,7 +367,7 @@
         </widget>
        </item>
        <item row="4" column="2">
-        <widget class="QPushButton" name="pushButton_19">
+        <widget class="QPushButton" name="btn_num_3">
          <property name="minimumSize">
           <size>
            <width>0</width>
@@ -382,7 +385,7 @@
         </widget>
        </item>
        <item row="4" column="3">
-        <widget class="QPushButton" name="pushButton_20">
+        <widget class="QPushButton" name="btn_add">
          <property name="minimumSize">
           <size>
            <width>0</width>
@@ -400,7 +403,7 @@
         </widget>
        </item>
        <item row="5" column="0">
-        <widget class="QPushButton" name="pushButton_21">
+        <widget class="QPushButton" name="btn_plus_minus">
          <property name="minimumSize">
           <size>
            <width>0</width>
@@ -418,7 +421,7 @@
         </widget>
        </item>
        <item row="5" column="1">
-        <widget class="QPushButton" name="pushButton_22">
+        <widget class="QPushButton" name="btn_num_0">
          <property name="minimumSize">
           <size>
            <width>0</width>
@@ -436,7 +439,7 @@
         </widget>
        </item>
        <item row="5" column="2">
-        <widget class="QPushButton" name="pushButton_23">
+        <widget class="QPushButton" name="btn_coma">
          <property name="minimumSize">
           <size>
            <width>0</width>
@@ -454,7 +457,7 @@
         </widget>
        </item>
        <item row="5" column="3">
-        <widget class="QPushButton" name="pushButton_24">
+        <widget class="QPushButton" name="btn_submit">
          <property name="minimumSize">
           <size>
            <width>0</width>
@@ -467,7 +470,7 @@
           </font>
          </property>
          <property name="text">
-          <string>=</string>
+          <string>Submit</string>
          </property>
         </widget>
        </item>
