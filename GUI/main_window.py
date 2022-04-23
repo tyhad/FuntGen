@@ -1,10 +1,9 @@
 import sys
 import main_window_gui
 
-from PyQt5 import QtWidgets, QtCore
-from PyQt5.QtWidgets import QApplication, QTableWidgetItem, QMessageBox, QFileDialog, QLineEdit
-
-from helper import show_message_dialog
+from math import sin, cos, tan, pi
+from PyQt5 import QtWidgets
+from PyQt5.QtWidgets import QApplication
 
 
 class MainApp(QtWidgets.QMainWindow, main_window_gui.Ui_MainWindow):
@@ -28,11 +27,22 @@ class MainApp(QtWidgets.QMainWindow, main_window_gui.Ui_MainWindow):
         self.btn_num_9.clicked.connect(self.func_btn_num_9)
 
         self.btn_add.clicked.connect(self.func_btn_opr_add)
+        self.btn_substraction.clicked.connect(self.func_btn_opr_subs)
+        self.btn_multiplication.clicked.connect(self.func_btn_opr_mul)
+        self.btn_divide.clicked.connect(self.func_btn_opr_div)
+        self.btn_cos.clicked.connect(self.func_btn_opr_cos)
+        self.btn_sin.clicked.connect(self.func_btn_opr_sin)
+        self.btn_tan.clicked.connect(self.func_btn_opr_tan)
+        self.btn_close_bracket.clicked.connect(self.func_btn_opr_close_bracket)
+        self.btn_open_bracket.clicked.connect(self.func_btn_opr_open_bracket)
+        self.btn_pi.clicked.connect(self.func_btn_opr_pi)
 
-        self.btn_submit.clicked.connect(self.func_btn_opr_submit)
+        self.btn_equal.clicked.connect(self.func_btn_opr_equal)
 
     def set_formula(self, key: str):
-        self.formula = self.formula + key
+        self.formula = self.le_formula_box.text()
+        self.current_cursor = self.le_formula_box.cursorPosition()
+        self.formula = self.formula[:self.current_cursor] + key + self.formula[self.current_cursor:]
         self.le_formula_box.setText(self.formula)
 
     def func_btn_num_0(self):
@@ -68,17 +78,53 @@ class MainApp(QtWidgets.QMainWindow, main_window_gui.Ui_MainWindow):
     def func_btn_opr_add(self):
         self.set_formula("+")
 
-#     =======================
-    def func_btn_opr_submit(self):
+    def func_btn_opr_subs(self):
+        self.set_formula("-")
+
+    def func_btn_opr_mul(self):
+        self.set_formula("*")
+
+    def func_btn_opr_div(self):
+        self.set_formula("/")
+
+    def func_btn_opr_cos(self):
+        self.set_formula("cos")
+
+    def func_btn_opr_sin(self):
+        self.set_formula("sin")
+
+    def func_btn_opr_tan(self):
+        self.set_formula("tan")
+
+    def func_btn_opr_open_bracket(self):
+        self.set_formula("(")
+
+    def func_btn_opr_close_bracket(self):
+        self.set_formula(")")
+
+    def func_btn_opr_pi(self):
+        self.set_formula("pi")
+
+    def func_btn_opr_comma(self):
+        self.set_formula(".")
+
+    def func_btn_opr_equal(self):
         self.list_of_wave.clear()
-        for i in range(1, 300 + 1):
-            self.list_of_wave.append(i)
+        self.evaluate_formula()
+        print(self.list_of_wave)
 
-        show_message_dialog(self.list_of_wave)
+    def evaluate_formula(self):
+        formula = self.le_formula_box.text()
+        t = 0.01
+        form = formula.split("*")[1]
+        idx = form.find("(")
+        freq = int(form[idx + 1:])
+        d = int((2*pi/freq) / t)
 
-
-
-
+        for i in range(0, d):
+            result = eval(formula)
+            self.list_of_wave.append(round(result, 3))
+            t = t + 0.01
 
 
 def main():
