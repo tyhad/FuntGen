@@ -187,7 +187,7 @@
         </widget>
        </item>
        <item row="5" column="3">
-        <widget class="QPushButton" name="btn_equal">
+        <widget class="QPushButton" name="btn_submit">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="MinimumExpanding">
            <horstretch>0</horstretch>
@@ -202,11 +202,11 @@
          </property>
          <property name="font">
           <font>
-           <pointsize>14</pointsize>
+           <pointsize>13</pointsize>
           </font>
          </property>
          <property name="text">
-          <string>=</string>
+          <string>Submit</string>
          </property>
         </widget>
        </item>
@@ -475,7 +475,7 @@
         </widget>
        </item>
        <item row="5" column="0">
-        <widget class="QPushButton" name="btn_plus_minus">
+        <widget class="QPushButton" name="btn_t">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="MinimumExpanding">
            <horstretch>0</horstretch>
@@ -494,7 +494,7 @@
           </font>
          </property>
          <property name="text">
-          <string>+/-</string>
+          <string>t</string>
          </property>
         </widget>
        </item>
