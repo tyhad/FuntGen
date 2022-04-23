@@ -116,15 +116,19 @@ class MainApp(QtWidgets.QMainWindow, main_window_gui.Ui_MainWindow):
     def evaluate_formula(self):
         formula = self.le_formula_box.text()
         t = 0.01
-        form = formula.split("*")[1]
-        idx = form.find("(")
-        freq = int(form[idx + 1:])
-        d = int((2*pi/freq) / t)
+        try:
+            form = formula.split("*")[1]
+            idx = form.find("(")
+            freq = int(form[idx + 1:])
+            d = int((2 * pi / freq) / t)
 
-        for i in range(0, d):
-            result = eval(formula)
-            self.list_of_wave.append(round(result, 3))
-            t = t + 0.01
+            for i in range(0, d):
+                result = eval(formula)
+                self.list_of_wave.append(round(result, 3))
+                t = t + 0.01
+        except IndexError:
+            print("Kurang *")
+
 
 
 def main():
