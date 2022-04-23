@@ -36,8 +36,10 @@ class MainApp(QtWidgets.QMainWindow, main_window_gui.Ui_MainWindow):
         self.btn_close_bracket.clicked.connect(self.func_btn_opr_close_bracket)
         self.btn_open_bracket.clicked.connect(self.func_btn_opr_open_bracket)
         self.btn_pi.clicked.connect(self.func_btn_opr_pi)
+        self.btn_t.clicked.connect(self.func_btn_t)
+        self.btn_clear.clicked.connect(self.func_btn_clear)
 
-        self.btn_equal.clicked.connect(self.func_btn_opr_equal)
+        self.btn_submit.clicked.connect(self.func_btn_submit)
 
     def set_formula(self, key: str):
         self.formula = self.le_formula_box.text()
@@ -108,10 +110,17 @@ class MainApp(QtWidgets.QMainWindow, main_window_gui.Ui_MainWindow):
     def func_btn_opr_comma(self):
         self.set_formula(".")
 
-    def func_btn_opr_equal(self):
+    def func_btn_t(self):
+        self.set_formula("t")
+
+    def func_btn_submit(self):
         self.list_of_wave.clear()
         self.evaluate_formula()
         print(self.list_of_wave)
+
+    def func_btn_clear(self):
+        self.le_formula_box.setText("")
+        self.formula = ""
 
     def evaluate_formula(self):
         formula = self.le_formula_box.text()
@@ -128,7 +137,8 @@ class MainApp(QtWidgets.QMainWindow, main_window_gui.Ui_MainWindow):
                 t = t + 0.01
         except IndexError:
             print("Kurang *")
-
+        except Exception:
+            print("Terjadi Kesalahan")
 
 
 def main():
